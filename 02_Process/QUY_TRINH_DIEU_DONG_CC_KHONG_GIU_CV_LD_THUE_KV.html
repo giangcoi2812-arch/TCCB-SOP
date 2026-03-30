@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy trình Điều động CC không giữ CV LĐ — Thuế khu vực</title>
+    <meta name="description" content="SOP Điều động công chức không giữ chức vụ lãnh đạo tại Thuế khu vực. Căn cứ QĐ 439/QĐ-BTC và QĐ 1528/QĐ-BTC.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2b6cb0;
+            --primary-bg: #ebf4ff;
+            --accent: #c53030;
+            --accent-light: #fff5f5;
+            --success: #276749;
+            --success-bg: #f0fff4;
+            --warning: #c05621;
+            --warning-bg: #fffaf0;
+            --gray-50: #f7fafc;
+            --gray-100: #edf2f7;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e0;
+            --gray-500: #718096;
+            --gray-700: #4a5568;
+            --gray-800: #2d3748;
+            --gray-900: #1a202c;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --radius: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8edf5 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #2c5282 60%, var(--primary-light) 100%);
+            color: white; padding: 40px 48px; border-radius: 16px;
+            margin-bottom: 32px; box-shadow: var(--shadow-lg);
+            position: relative; overflow: hidden;
+        }
+        .header::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header-subtitle { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; margin-bottom: 8px; font-weight: 500; }
+        .header h1 { font-size: 24px; font-weight: 800; line-height: 1.3; margin-bottom: 4px; }
+        .header-unit { font-size: 15px; opacity: 0.9; font-weight: 500; margin-top: 8px; }
+        .header-updated { font-size: 12px; opacity: 0.6; margin-top: 12px; }
+        .section { background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm); margin-bottom: 24px; overflow: hidden; border: 1px solid var(--gray-200); }
+        .section-header { background: var(--gray-50); padding: 16px 24px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 10px; }
+        .section-header h2 { font-size: 16px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .section-icon { width: 28px; height: 28px; background: var(--primary); color: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+        .section-body { padding: 24px; }
+        table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        thead th { background: var(--primary); color: white; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.5px; }
+        thead th:first-child { border-radius: 6px 0 0 0; }
+        thead th:last-child { border-radius: 0 6px 0 0; }
+        tbody td { padding: 10px 14px; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
+        tbody tr:hover { background: var(--gray-50); }
+        tbody tr:last-child td { border-bottom: none; }
+        .info-table thead th { background: var(--primary-light); }
+        .step-card { background: var(--gray-50); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; border-left: 4px solid var(--primary); }
+        .step-card h3 { font-size: 15px; color: var(--primary); margin-bottom: 12px; font-weight: 700; }
+        .step-card table { font-size: 13px; }
+        .step-card thead th { background: var(--primary-light); font-size: 11.5px; }
+        .note { padding: 16px 20px; border-radius: var(--radius); margin: 12px 0; font-size: 13.5px; line-height: 1.7; }
+        .note-warning { background: var(--warning-bg); border-left: 4px solid var(--warning); }
+        .note-warning .note-title { color: var(--warning); }
+        .note-info { background: var(--primary-bg); border-left: 4px solid var(--primary-light); }
+        .note-info .note-title { color: var(--primary-light); }
+        .note-danger { background: var(--accent-light); border-left: 4px solid var(--accent); }
+        .note-danger .note-title { color: var(--accent); }
+        .note-success { background: var(--success-bg); border-left: 4px solid var(--success); }
+        .note-success .note-title { color: var(--success); }
+        .note-title { font-weight: 700; font-size: 13px; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 600; }
+        .badge-blue { background: var(--primary-bg); color: var(--primary); }
+        .badge-green { background: var(--success-bg); color: var(--success); }
+        .badge-red { background: var(--accent-light); color: var(--accent); }
+        .badge-orange { background: var(--warning-bg); color: var(--warning); }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .footer { text-align: center; padding: 24px; color: var(--gray-500); font-size: 12px; }
+        .footer strong { color: var(--gray-700); }
+        @media print { body { background: white; } .container { padding: 0; max-width: 100%; } .header { border-radius: 0; box-shadow: none; } .section { box-shadow: none; break-inside: avoid; } }
+        @media (max-width: 768px) { .container { padding: 12px; } .header { padding: 24px; } .header h1 { font-size: 18px; } .section-body { padding: 16px; } table { font-size: 12px; } .two-col { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-subtitle">Bộ Tài chính — Cục Thuế</div>
+        <h1>QUY TRÌNH ĐIỀU ĐỘNG CÔNG CHỨC<br>KHÔNG GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ</h1>
+        <div class="header-unit">Dành cho Phòng TCCB tại Thuế khu vực</div>
+        <div class="header-updated">Mã SOP: SOP-DD-CCKLĐ-2026 · Phiên bản v1.0 · Cập nhật: 30/03/2026</div>
+    </div>
+
+    <!-- THÔNG TIN CHUNG -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">📋</div>
+            <h2>Thông tin chung</h2>
+        </div>
+        <div class="section-body">
+            <table class="info-table">
+                <thead><tr><th style="width:220px">Thông tin</th><th>Nội dung</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Đơn vị áp dụng</strong></td><td>Thuế khu vực (Khu vực và tương đương)</td></tr>
+                    <tr><td><strong>Đối tượng sử dụng</strong></td><td>Phòng TCCB tại Thuế khu vực</td></tr>
+                    <tr><td><strong>Loại SOP</strong></td><td>Process (tuần tự, có nhánh rẽ theo phạm vi)</td></tr>
+                    <tr><td><strong>Căn cứ pháp lý</strong></td><td>
+                        <span class="badge badge-blue">QĐ 439/QĐ-BTC</span>
+                        <span class="badge badge-blue">QĐ 1528/QĐ-BTC</span>
+                    </td></tr>
+                    <tr><td><strong>Phạm vi</strong></td><td>Điều động CC <strong>không</strong> giữ chức vụ LĐ, QL tại Thuế khu vực</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- PHÂN BIỆT QUY TRÌNH -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">⚠️</div>
+            <h2>Phân biệt: Đây là quy trình nào?</h2>
+        </div>
+        <div class="section-body">
+            <div class="note note-danger" style="margin-top:0">
+                <div class="note-title">⚠️ Nỗi đau thực tế</div>
+                <p>Mọi người dễ <strong>lẫn lộn</strong> giữa Điều động và Chuyển đổi VTCT. Trước khi bắt đầu, hãy xác định đúng quy trình:</p>
+            </div>
+            <table>
+                <thead><tr><th>Câu hỏi</th><th>Nếu CÓ →</th><th>Nếu KHÔNG →</th></tr></thead>
+                <tbody>
+                    <tr><td>CC có nằm trong <strong>danh mục vị trí phải chuyển đổi</strong> và <strong>đã đến hạn</strong> (3-5 năm)?</td><td><span class="badge badge-red">→ Dùng SOP CĐVTCT</span></td><td>Tiếp tục ↓</td></tr>
+                    <tr><td>Việc thay đổi vị trí là do <strong>yêu cầu CT</strong> hoặc <strong>nguyện vọng cá nhân</strong>?</td><td><span class="badge badge-green">✅ Đúng SOP này</span></td><td>Kiểm tra lại</td></tr>
+                </tbody>
+            </table>
+            <div class="note note-info" style="margin-top:16px">
+                <div class="note-title">💡 Mẹo nhớ</div>
+                <p><strong>Điều động</strong> = "có lý do mới chuyển" · <strong>CĐVTCT</strong> = "đến hạn phải chuyển"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- THUẬT NGỮ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">📖</div>
+            <h2>Thuật ngữ & Viết tắt</h2>
+        </div>
+        <div class="section-body">
+            <table>
+                <thead><tr><th>Viết tắt</th><th>Nghĩa</th><th>Ghi chú</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Thuế KV</strong></td><td>Thuế khu vực</td><td>= "Khu vực và tương đương" (QĐ 1528); tên cũ: Chi cục Thuế khu vực</td></tr>
+                    <tr><td><strong>Trưởng Thuế KV</strong></td><td>Trưởng Thuế khu vực</td><td>= "Trưởng khu vực và tương đương" (QĐ 1528)</td></tr>
+                    <tr><td><strong>Thuế cơ sở</strong></td><td>Đơn vị cấp cơ sở trực thuộc Thuế KV</td><td>Tên cũ: Đội Thuế cấp huyện. Có tư cách pháp nhân</td></tr>
+                    <tr><td><strong>Phòng TCCB</strong></td><td>Phòng Tổ chức cán bộ tại Thuế KV</td><td>Đơn vị tham mưu TCCB (QĐ 439 Đ.2 k.12)</td></tr>
+                    <tr><td>CC</td><td>Công chức</td><td></td></tr>
+                    <tr><td>CV LĐ</td><td>Chức vụ lãnh đạo, quản lý</td><td></td></tr>
+                    <tr><td>ĐĐ</td><td>Điều động</td><td></td></tr>
+                    <tr><td>CĐVTCT</td><td>Chuyển đổi vị trí công tác</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- PHÂN CẤP THẨM QUYỀN -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">⚖️</div>
+            <h2>Phân cấp thẩm quyền</h2>
+        </div>
+        <div class="section-body">
+            <table>
+                <thead><tr><th>Phạm vi</th><th>Phê duyệt chủ trương</th><th>Ký QĐ</th><th>Căn cứ</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Nội bộ Thuế KV</strong><br><em>(giữa các Thuế CS / Phòng)</em></td><td>Trưởng Thuế KV</td><td>Trưởng Thuế KV</td><td>QĐ 439 Đ.2 k.4</td></tr>
+                    <tr><td><strong>Giữa các Thuế KV</strong><br><em>(cùng Cục Thuế)</em></td><td>Cục trưởng</td><td>Cục trưởng</td><td>QĐ 1528 Đ.6 k.2.3</td></tr>
+                    <tr><td><strong>Từ Thuế KV lên/về Cục</strong></td><td>Cục trưởng</td><td>Cục trưởng</td><td>QĐ 1528 Đ.6 k.2.3</td></tr>
+                </tbody>
+            </table>
+            <div class="note note-info" style="margin-top:16px">
+                <div class="note-title">💡 Tại sao phân cấp như vậy?</div>
+                <p>ĐĐ nội bộ = Trưởng Thuế KV tự quyết (CC vẫn trong phạm vi QL). ĐĐ ra ngoài = Cục trưởng quyết (CC rời phạm vi QL của Trưởng Thuế KV).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BƯỚC 0 -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">⬛</div>
+            <h2>Bước 0: Xác định phạm vi điều động</h2>
+        </div>
+        <div class="section-body">
+            <div class="step-card">
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Phòng TCCB</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Xác định CC điều động sẽ chuyển đi đâu: (1) nội bộ Thuế KV hay (2) ra ngoài Thuế KV</td></tr>
+                        <tr><td><strong>💡 Tại sao</strong></td><td>Thẩm quyền và quy trình khác nhau hoàn toàn. Nội bộ = ngắn. Ra ngoài = dài hơn.</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td>Xác định rõ: Quy trình A hay Quy trình B</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 style="font-size:14px; color:var(--primary); margin: 16px 0 12px;">✅ Checklist kiểm tra tiền đề (BẮT BUỘC)</h3>
+            <div class="note note-danger" style="margin-top:0">
+                <div class="note-title">⚠️ Kiểm tra trước khi thực hiện</div>
+                <p>CC <strong>KHÔNG</strong> thuộc các trường hợp sau (QĐ 439, Đ.20 k.5):</p>
+            </div>
+            <table>
+                <thead><tr><th>#</th><th>Trường hợp CHƯA được điều động</th><th>Trừ trường hợp</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>CC đang điều trị bệnh hiểm nghèo / không đảm bảo sức khỏe</td><td>—</td></tr>
+                    <tr><td>2</td><td>CC đang bị xem xét kỷ luật / điều tra / truy tố / xét xử / liên quan thanh tra</td><td>—</td></tr>
+                    <tr><td>3</td><td>CC đang đi học dài hạn (≥12 tháng) hoặc đang biệt phái</td><td>—</td></tr>
+                    <tr><td>4</td><td>CC nữ đang mang thai, nghỉ thai sản, nuôi con dưới 36 tháng</td><td>Có nguyện vọng ĐĐ</td></tr>
+                    <tr><td>5</td><td>CC nam đang nuôi con dưới 36 tháng (vợ mất/bất khả kháng)</td><td>Có nguyện vọng ĐĐ</td></tr>
+                    <tr><td>6</td><td>CC có hoàn cảnh đặc biệt khó khăn</td><td>Có nguyện vọng ĐĐ</td></tr>
+                    <tr><td>7</td><td>CC là người tố cáo đang được bảo vệ</td><td>Có yêu cầu CQ/nguyện vọng</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- QUY TRÌNH A -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">📋</div>
+            <h2>Quy trình A — Điều động nội bộ Thuế khu vực</h2>
+        </div>
+        <div class="section-body">
+            <div class="note note-info" style="margin-top:0">
+                <p>Áp dụng khi CC chuyển từ Thuế cơ sở / Phòng này sang Thuế cơ sở / Phòng khác <strong>trong cùng</strong> Thuế khu vực.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước A1: Lãnh đạo Thuế KV thảo luận, thống nhất chủ trương</h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Tập thể lãnh đạo Thuế khu vực</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Họp thảo luận, thống nhất chủ trương ĐĐ. Xem xét: vị trí cần bố trí, CC phù hợp, lý do</td></tr>
+                        <tr><td><strong>💡 Tại sao</strong></td><td>QĐ 439 Đ.21 k.2: tập thể LĐ và cấp ủy phải thống nhất chủ trương trước</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td><strong>Biên bản họp</strong> ghi nhận ý kiến thống nhất</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước A2: Gặp gỡ, trao đổi với CC <span class="badge badge-orange">Có ngoại lệ</span></h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Lãnh đạo Thuế KV hoặc Phòng TCCB</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Gặp CC trao đổi về chủ trương ĐĐ và yêu cầu nhiệm vụ</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td><strong>Biên bản gặp gỡ</strong> (có chữ ký CC)</td></tr>
+                    </tbody>
+                </table>
+                <div class="note note-warning" style="margin-bottom:0">
+                    <div class="note-title">⚠️ Ngoại lệ</div>
+                    <p>Nếu ĐĐ <strong>theo nguyện vọng cá nhân</strong> → <strong>KHÔNG CẦN</strong> gặp gỡ CC (QĐ 439, Đ.21 k.2 đ.2.2). Chuyển ngay sang Bước A3.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước A3: Trưởng Thuế KV ký QĐ điều động</h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Trưởng Thuế khu vực</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Ký QĐ điều động CC về vị trí mới</td></tr>
+                        <tr><td><strong>💡 Tại sao</strong></td><td>QĐ 1528, Đ.10 k.2.1: Trưởng Thuế KV có thẩm quyền ĐĐ trong phạm vi nội bộ</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td><strong>Quyết định điều động</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước A4: CC nhận nhiệm vụ tại vị trí mới</h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Phòng TCCB + CC + Đơn vị nhận</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Thông báo QĐ, bàn giao công việc, nhận nhiệm vụ mới</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td>Biên bản bàn giao + CC bắt đầu làm việc</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUY TRÌNH B -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">📋</div>
+            <h2>Quy trình B — Điều động ra ngoài Thuế khu vực</h2>
+        </div>
+        <div class="section-body">
+            <div class="note note-info" style="margin-top:0">
+                <p>Áp dụng khi CC chuyển từ Thuế KV này sang Thuế KV khác hoặc về/lên Cục Thuế. Thẩm quyền: <strong>Cục trưởng Cục Thuế</strong>.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước B1: Lấy ý kiến tập thể LĐ nơi tiếp nhận</h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Phòng TCCB (Thuế KV nơi đi) hoặc Phòng TCCB Cục</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Gửi VB lấy ý kiến tập thể LĐ <strong>nơi tiếp nhận</strong></td></tr>
+                        <tr><td><strong>💡 Tại sao</strong></td><td>QĐ 439 Đ.21 k.2 đ.2.1a: phải lấy ý kiến nơi tiếp nhận trước — bước <strong>bắt buộc</strong></td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td><strong>VB trả lời</strong> của tập thể LĐ nơi tiếp nhận</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước B2: Lấy ý kiến nơi đi + Gặp gỡ CC <span class="badge badge-orange">Có ngoại lệ</span></h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Phòng TCCB (Thuế KV nơi đi) hoặc Phòng TCCB Cục</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>(1) Lấy ý kiến VB tập thể LĐ nơi đi + đánh giá, nhận xét CC; (2) Gặp CC trao đổi → <strong>lập biên bản</strong></td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td>VB ý kiến nơi đi + Đánh giá CC + <strong>Biên bản gặp gỡ CC</strong></td></tr>
+                    </tbody>
+                </table>
+                <div class="note note-warning" style="margin-bottom:0">
+                    <div class="note-title">⚠️ Ngoại lệ</div>
+                    <p>Nếu ĐĐ <strong>theo nguyện vọng</strong> → không cần gặp CC (QĐ 439, Đ.21 k.2 đ.2.2). Chỉ cần lấy ý kiến nơi đi.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước B3: Tổng hợp kết quả, trình Cục trưởng</h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Phòng TCCB Thuế KV hoặc Phòng TCCB Cục</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Tổng hợp toàn bộ hồ sơ, lập Tờ trình trình Cục trưởng</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td><strong>Tờ trình</strong> kèm hồ sơ</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước B4: Cục trưởng ký QĐ điều động</h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Cục trưởng Cục Thuế</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td><strong>Quyết định điều động</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step-card">
+                <h3>Bước B5: Công bố QĐ, CC nhận nhiệm vụ mới</h3>
+                <table>
+                    <thead><tr><th style="width:140px">Mục</th><th>Nội dung</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>👤 Ai</strong></td><td>Phòng TCCB Cục + Phòng TCCB Thuế KV nơi đi và nơi đến</td></tr>
+                        <tr><td><strong>⚡ Làm gì</strong></td><td>Gửi QĐ, CC bàn giao vàn nhận nhiệm vụ mới</td></tr>
+                        <tr><td><strong>📤 Sản phẩm</strong></td><td>Biên bản bàn giao + CC nhận nhiệm vụ</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDGE CASES -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">🔀</div>
+            <h2>Xử lý ngoại lệ (Edge Cases)</h2>
+        </div>
+        <div class="section-body">
+            <table>
+                <thead><tr><th>#</th><th>Tình huống</th><th>Xử lý</th><th>Escalation</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>CC <strong>từ chối</strong> ĐĐ</td><td>Xem xét kỷ luật từ <strong>khiển trách trở lên</strong>; không được đề bạt, nâng lương (QĐ 439, Đ.19 k.5.1)</td><td>Trưởng Thuế KV → Cục trưởng</td></tr>
+                    <tr><td>2</td><td>CC có <strong>lý do bất khả kháng</strong></td><td>CC báo cáo bằng VB nêu rõ lý do</td><td>Cấp TQ xem xét (QĐ 439, Đ.19 k.5.2)</td></tr>
+                    <tr><td>3</td><td>Nơi đi/đến <strong>chưa thống nhất</strong></td><td>Phòng TCCB báo cáo <strong>đầy đủ các ý kiến</strong></td><td>Cục trưởng quyết định cuối cùng</td></tr>
+                    <tr><td>4</td><td>Phát hiện CC thuộc trường hợp <strong>chưa được ĐĐ</strong></td><td><strong>DỪNG</strong> quy trình ngay</td><td>Chờ hết giai đoạn hạn chế → khởi động lại</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- LƯU Ý -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">⚠️</div>
+            <h2>Lưu ý quan trọng</h2>
+        </div>
+        <div class="section-body">
+            <div class="note note-danger" style="margin-top:0">
+                <div class="note-title">⚠️ Nghiêm cấm</div>
+                <p><strong>KHÔNG được lợi dụng ĐĐ để trù dập CC</strong> (QĐ 439, Đ.19 k.7). <strong>KHÔNG ĐĐ trái chuyên môn</strong> (QĐ 439, Đ.19 k.6).</p>
+            </div>
+            <table>
+                <thead><tr><th>#</th><th>Lưu ý</th><th>Chi tiết</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td><strong>Phân biệt rõ ĐĐ vs CĐVTCT</strong></td><td>CC thuộc danh mục + đến hạn → dùng SOP-CDVTCT</td></tr>
+                    <tr><td>2</td><td><strong>Nguyện vọng = không gặp gỡ</strong></td><td>ĐĐ theo nguyện vọng → bỏ qua thủ tục gặp CC</td></tr>
+                    <tr><td>3</td><td><strong>Thời hạn ĐĐ</strong></td><td>Không có thời hạn cố định (khác CĐVTCT là 2-5 năm)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- CHECKLIST HỒ SƠ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">📎</div>
+            <h2>Checklist hồ sơ</h2>
+        </div>
+        <div class="section-body">
+            <h3 style="font-size:14px; color:var(--primary); margin-bottom:12px;">Quy trình A — Nội bộ Thuế KV</h3>
+            <table style="margin-bottom:24px;">
+                <thead><tr><th>#</th><th>Loại giấy tờ</th><th>Bắt buộc?</th><th>Ghi chú</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Biên bản họp tập thể LĐ Thuế KV</td><td><span class="badge badge-green">✅ Có</span></td><td>Ghi nhận chủ trương ĐĐ</td></tr>
+                    <tr><td>2</td><td>Biên bản gặp gỡ CC</td><td><span class="badge badge-orange">✅*</span></td><td>* Không cần nếu theo nguyện vọng</td></tr>
+                    <tr><td>3</td><td>Đơn/nguyện vọng CC</td><td><span class="badge badge-orange">✅*</span></td><td>* Chỉ khi ĐĐ theo nguyện vọng</td></tr>
+                    <tr><td>4</td><td>Quyết định điều động</td><td><span class="badge badge-green">✅ Có</span></td><td>Do Trưởng Thuế KV ký</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="font-size:14px; color:var(--primary); margin-bottom:12px;">Quy trình B — Ra ngoài Thuế KV</h3>
+            <table>
+                <thead><tr><th>#</th><th>Loại giấy tờ</th><th>Bắt buộc?</th><th>Ghi chú</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>VB lấy ý kiến + trả lời LĐ nơi tiếp nhận</td><td><span class="badge badge-green">✅ Có</span></td><td>Bước B1</td></tr>
+                    <tr><td>2</td><td>VB lấy ý kiến + trả lời LĐ nơi đi</td><td><span class="badge badge-green">✅ Có</span></td><td>Bước B2</td></tr>
+                    <tr><td>3</td><td>Đánh giá, nhận xét CC (03 năm)</td><td><span class="badge badge-green">✅ Có</span></td><td>Của tập thể LĐ nơi đi</td></tr>
+                    <tr><td>4</td><td>Biên bản gặp gỡ CC</td><td><span class="badge badge-orange">✅*</span></td><td>* Không cần nếu theo nguyện vọng</td></tr>
+                    <tr><td>5</td><td>Đơn/nguyện vọng CC</td><td><span class="badge badge-orange">✅*</span></td><td>* Chỉ khi ĐĐ theo nguyện vọng</td></tr>
+                    <tr><td>6</td><td>Tờ trình trình Cục trưởng</td><td><span class="badge badge-green">✅ Có</span></td><td>Bước B3</td></tr>
+                    <tr><td>7</td><td>Quyết định điều động</td><td><span class="badge badge-green">✅ Có</span></td><td>Do Cục trưởng ký</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon">📊</div>
+            <h2>Chỉ số đo lường (KPIs)</h2>
+        </div>
+        <div class="section-body">
+            <table>
+                <thead><tr><th>Chỉ số</th><th>Mục tiêu</th><th>Cách đo</th><th>Tần suất</th></tr></thead>
+                <tbody>
+                    <tr><td>Thời gian hoàn thành (nội bộ)</td><td>≤ 10 ngày LV</td><td>Ngày phát sinh → ngày QĐ</td><td>Mỗi vụ việc</td></tr>
+                    <tr><td>Thời gian hoàn thành (ra ngoài)</td><td>≤ 30 ngày LV</td><td>Ngày phát sinh → ngày QĐ</td><td>Mỗi vụ việc</td></tr>
+                    <tr><td>Tỷ lệ CC từ chối</td><td>0%</td><td>Số CC không chấp hành / tổng</td><td>Hàng năm</td></tr>
+                    <tr><td>Tỷ lệ hồ sơ bị trả lại</td><td>0%</td><td>Số lần Cục yêu cầu bổ sung / tổng</td><td>Hàng năm</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p><strong>Tài liệu nội bộ</strong> — Dành cho Phòng TCCB tại Thuế khu vực thuộc Cục Thuế</p>
+        <p>Căn cứ: QĐ 439/QĐ-BTC (Chương IV, Đ.19-26) • QĐ 1528/QĐ-BTC (Đ.6, Đ.10)</p>
+        <p style="margin-top:8px; font-weight:600; color:var(--gray-700);">Mã SOP: SOP-DD-CCKLĐ-2026 · Phiên bản v1.0 · Ngày 30/03/2026</p>
+    </div>
+
+</div>
+</body>
+</html>
